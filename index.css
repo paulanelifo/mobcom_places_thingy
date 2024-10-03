@@ -1,128 +1,231 @@
-/* From Uiverse.io by alexruix */ 
-*{
-    display: flexbox;
+* {
+  font-size: 95%;
 }
 
-.input-group{
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1.5px;
-    box-shadow: 10px 10px 8px #888888;;
-    padding: 10px;
-    width: 190px;
-    height: 100%;
-    .input {
-        /* max-width: 190px; */
-        width: 150px;
-        height: 44px;
-        background-color: #05060f0a;
-        border-radius: .5rem;
-        padding: 0 1rem;
-        border: 2px solid transparent;
-        font-size: 1rem;
-        transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
-      }
-      
-      .label {
-        display: block;
-        margin-bottom: .3rem;
-        font-size: .9rem;
-        font-weight: bold;
-        color: #000000;
-        transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
-      }
-      
-      .input:hover, .input:focus, .input-group:hover .input {
-        outline: none;
-        border-color: #05060f;
-      }
-      
-      .input-group:hover .label, .input:focus {
-        color: #05060fc2;
-      }
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+  width: 30rem;
+  height: 45rem;
+  border-radius: 2rem;
+  padding: 1rem 3rem 1rem 3rem;
+  display: flex;
+  flex-direction: row;
 }
 
-/* From Uiverse.io by andrew-demchenk0 */ 
-.cube-loader {
-    position: relative;
-  /* u can choose any size */
-    width: 75px;
-    height: 75px;
-    transform-style: preserve-3d;
-    transform: rotateX(-30deg);
-    animation: animate 4s linear infinite;
-  }
-  
-  @keyframes animate {
-    0% {
-      transform: rotateX(-30deg) rotateY(0);
-    }
-  
-    100% {
-      transform: rotateX(-30deg) rotateY(360deg);
-    }
-  }
-  
-  .cube-loader .cube-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* top: 0;
-    left: 0; */
-    transform-style: preserve-3d;
-  }
-  
-  .cube-loader .cube-wrapper .cube-span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* top: 0;
-    left: 0; */
-                                       /* width 75px / 2 = 37.5px */
-    transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
-    background: linear-gradient(
-      to bottom,
-      hsl(330, 3.13%, 25.1%) 0%,
-      hsl(177.27, 21.71%, 32.06%) 5.5%,
-      hsl(176.67, 34.1%, 36.88%) 12.1%,
-      hsl(176.61, 42.28%, 40.7%) 19.6%,
-      hsl(176.63, 48.32%, 43.88%) 27.9%,
-      hsl(176.66, 53.07%, 46.58%) 36.6%,
-      hsl(176.7, 56.94%, 48.91%) 45.6%,
-      hsl(176.74, 62.39%, 50.91%) 54.6%,
-      hsl(176.77, 69.86%, 52.62%) 63.4%,
-      hsl(176.8, 76.78%, 54.08%) 71.7%,
-      hsl(176.83, 83.02%, 55.29%) 79.4%,
-      hsl(176.85, 88.44%, 56.28%) 86.2%,
-      hsl(176.86, 92.9%, 57.04%) 91.9%,
-      hsl(176.88, 96.24%, 57.59%) 96.3%,
-      hsl(176.88, 98.34%, 57.93%) 99%,
-      hsl(176.89, 99.07%, 58.04%) 100%
-    );
-  }
-  
-  .cube-top {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    background: hsl(330, 3.13%, 25.1%) 0%;
-                        /* width 75px / 2 = 37.5px */
-    transform: rotateX(90deg) translateZ(37.5px);
-    transform-style: preserve-3d;
-  }
-  
-  .cube-top::before {
-    content: '';
-    position: absolute;
-  /* u can choose any size */
-    width: 75px;
-    height: 75px;
-    background: hsl(176.61, 42.28%, 40.7%) 19.6%;
-    transform: translateZ(-90px);
-    filter: blur(10px);
-    box-shadow: 0 0 10px #323232,
-                0 0 20px hsl(176.61, 42.28%, 40.7%) 19.6%,
-                0 0 30px #323232,
-                0 0 40px hsl(176.61, 42.28%, 40.7%) 19.6%;
-  }
-  
+.loc-button {
+  left: 4.9rem;
+  position: relative;
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem;
+  width: 13em;
+  border-radius: 1rem;
+  color: rgb(235, 34, 34);
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+.loc-button:active {
+  color: white;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+  background: lightcoral;
+}
+.loc-button:hover:not(:disabled) {
+  background: lightcoral;
+  color: white;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+.loc-button:disabled {
+  cursor: auto;
+  color: grey;
+}
+.loc-button.active {
+  color: white;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+  background: rgb(235, 34, 34);
+}
+
+.group1 {
+  display: flex;
+  height: 100%;
+  width: 10%;
+  justify-content: center;
+}
+.group1 .slider-container {
+  position: relative;
+  height: 100%;
+}
+.group1 .slider-container .vertical-slider {
+  margin-top: -0.02rem;
+  -webkit-appearance: slider-vertical; /* For Safari */
+  -moz-appearance: slider-vertical;
+       appearance: slider-vertical;
+  width: 10px;
+  height: 100%;
+  transform: rotate(0deg); /* Rotate the slider */
+  background: transparent;
+}
+.group1 .slider-container .vertical-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.group1 .slider-container .vertical-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.group1 .slider-container .value {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  font-size: 20px;
+  color: #333;
+}
+.group1 .location-labels {
+  display: flex;
+  flex-direction: column; /* For vertical stacking */
+  height: 100%; /* Ensure the container takes the full height */
+}
+.group1 .location-labels p {
+  flex-grow: 1; /* Each label will take equal space */
+  display: flex; /* Optional: allows centering content within each label */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.group2 {
+  height: 100%;
+  width: 30%;
+}
+.group2 .dots * {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+}
+.group2 .dots .bank2 {
+  top: 15%;
+  left: 11rem;
+}
+.group2 .labels * {
+  width: 5rem;
+  height: 0.7rem;
+  left: 7rem;
+  position: absolute;
+}
+.group2 .labels .bank2 {
+  top: 15%;
+  left: 12rem;
+}
+.group2 .ff4 {
+  top: 5%;
+}
+.group2 .ff3 {
+  top: 15%;
+}
+.group2 .mall2 {
+  top: 28%;
+}
+.group2 .ps2 {
+  top: 43%;
+}
+.group2 .church {
+  top: 50%;
+}
+.group2 .ff2 {
+  top: 54%;
+}
+.group2 .bank1 {
+  top: 65%;
+}
+.group2 .mall1 {
+  top: 76%;
+}
+.group2 .ps1 {
+  top: 85%;
+}
+.group2 .ff1 {
+  top: 95%;
+}
+
+.group3 {
+  height: 100%;
+  width: 60%;
+}
+.group3 p {
+  font-size: large;
+}
+.group3 .subgroup {
+  padding: 0.5rem;
+}
+.group3 .subgroup * {
+  margin: 0.3rem 0 0.3rem 0;
+}
+.group3 #find-refresh {
+  display: flex;
+  justify-content: center;
+}
+.group3 #find-refresh * {
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+/* From Uiverse.io by alexruix */
+.input-group .input {
+  max-width: 190px;
+  height: 44px;
+  background-color: rgba(5, 6, 15, 0.0392156863);
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s, color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s, background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+.input-group .input:hover, .input-group .input:focus, .input-group:hover .input-group .input {
+  outline: none;
+  border-color: #05060f;
+}
+.input-group .label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgba(5, 6, 15, 0.6);
+  transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+.input-group:hover .input-group .label,
+.input-group .label .input:focus {
+  color: rgba(5, 6, 15, 0.7607843137);
+}
+
+/* From Uiverse.io by KhelVers */
+.find-button {
+  cursor: pointer;
+  font-size: small;
+  font-family: inherit;
+  font-weight: bold;
+  color: rgb(235, 34, 34);
+  background-color: #f8f8fd;
+  padding: 0.8em 2.2em;
+  border-radius: 50em;
+  border: 6px solid lightcoral;
+  box-shadow: 0px 8px rgb(235, 34, 34);
+}
+.find-button:active {
+  position: relative;
+  top: 8px;
+  border: 6px solid rgb(235, 34, 34);
+  box-shadow: 0px 0px;
+}/*# sourceMappingURL=index.css.map */

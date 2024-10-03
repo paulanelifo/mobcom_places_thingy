@@ -1,0 +1,235 @@
+// globals
+*{
+    font-size: 95%;
+}
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+    width: 30rem;
+    height: 45rem;
+    border-radius: 2rem;
+    padding: 1rem 3rem 1rem 3rem;
+
+    display: flex;
+    flex-direction: row;
+}
+.loc-button {
+    left: 4.9rem;
+    position: relative;
+    background-color: #eee;
+    border: none;
+    padding: .5rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: rgb(235, 34, 34);
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    
+    &:active {
+        color: white;
+        box-shadow: 0 0.2rem #dfd9d9;
+        transform: translateY(0.2rem);
+        background: lightcoral;
+    }
+    
+    &:hover:not(:disabled) {
+    background: lightcoral;
+    color: white;
+    text-shadow: 0 0.1rem #bcb4b4;
+    }
+    
+    &:disabled {
+    cursor: auto;
+    color: grey;
+    }
+
+    &.active{
+        color: white;
+        box-shadow: 0 0.2rem #dfd9d9;
+        transform: translateY(0.2rem);
+        background: rgb(235, 34, 34);
+    }
+}
+
+// groups
+.group1{
+    display: flex;
+    // background-color: red;
+    height: 100%;
+    width: 10%;
+    justify-content: center;
+    .slider-container {
+        position: relative;
+        height: 100%;
+    
+        .vertical-slider {
+            margin-top: -.02rem;
+            -webkit-appearance: slider-vertical; /* For Safari */
+            appearance: slider-vertical;
+            width: 10px;
+            height: 100%;
+            transform: rotate(0deg); /* Rotate the slider */
+            background: transparent;
+        }
+        
+        .vertical-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .vertical-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #007bff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .value {
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            font-size: 20px;
+            color: #333;
+        }
+    }
+    .location-labels {
+        display: flex;
+        flex-direction: column; /* For vertical stacking */
+        height: 100%; /* Ensure the container takes the full height */
+        p{
+            flex-grow: 1; /* Each label will take equal space */
+            display: flex; /* Optional: allows centering content within each label */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+    }
+}
+.group2{
+    // background-color: blue;
+    height: 100%;
+    width: 30%;
+    
+    .dots{
+        *{
+            width: .7rem;
+            height: .7rem;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+        }
+        .bank2{top: 15%;left: 11rem;}
+    }
+    .labels{
+        *{
+            width: 5rem;
+            height: .7rem;
+            left: 7rem;
+            position: absolute;  
+        }    
+        .bank2{top: 15%;left:12rem}
+    }
+    .ff4{top: 5%;}
+    .ff3{top: 15%;}
+    .mall2{top: 28%;}
+    .ps2{top: 43%;}
+    .church{top: 50%;}
+    .ff2{top: 54%;}
+    .bank1{top: 65%;}
+    .mall1{top: 76%;}
+    .ps1{top: 85%;}
+    .ff1{top: 95%;}
+    }
+.group3{
+    // background-color: greenyellow;
+    height: 100%;
+    width: 60%;
+    p{
+        font-size: large;
+    }
+    .subgroup{
+        // border: 1px solid black;
+        padding: .5rem;
+        *{
+            margin: .3rem 0 .3rem 0;
+        }
+        
+    }
+    #find-refresh{
+        display: flex;
+        justify-content: center;
+        *{            
+        margin: 0 .5rem 0 .5rem;
+        }
+    }
+}
+
+// elements
+
+/* From Uiverse.io by alexruix */ 
+.input-group {
+    .input {
+      max-width: 190px;
+      height: 44px;
+      background-color: #05060f0a;
+      border-radius: 0.5rem;
+      padding: 0 1rem;
+      border: 2px solid transparent;
+      font-size: 1rem;
+      transition: border-color 0.3s cubic-bezier(.25, .01, .25, 1) 0s, 
+                  color 0.3s cubic-bezier(.25, .01, .25, 1) 0s, 
+                  background 0.2s cubic-bezier(.25, .01, .25, 1) 0s;
+  
+      &:hover,
+      &:focus,
+      .input-group:hover & {
+        outline: none;
+        border-color: #05060f;
+      }
+    }
+  
+    .label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #05060f99;
+      transition: color 0.3s cubic-bezier(.25, .01, .25, 1) 0s;
+  
+      .input-group:hover &,
+      .input:focus {
+        color: #05060fc2;
+      }
+    }
+  }
+  
+
+
+  /* From Uiverse.io by KhelVers */ 
+  .find-button {
+    cursor: pointer;
+    font-size: small;
+    font-family: inherit;
+    font-weight: bold;
+    color: rgb(235, 34, 34);
+    background-color: #f8f8fd;
+    padding: 0.8em 2.2em;
+    border-radius: 50em;
+    border: 6px solid lightcoral;
+    box-shadow: 0px 8px rgb(235, 34, 34);
+    &:active {
+      position: relative;
+      top: 8px;
+      border: 6px solid rgb(235, 34, 34);
+      box-shadow: 0px 0px;
+    }
+  }
+

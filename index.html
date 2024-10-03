@@ -1,27 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div class="input-group">
-        <label class="label">Input:</label>
-        <input autocomplete="off" name="Email" id="Email" class="input" type="email">
-    </div>
-    
-    <div class="cube-loader">
-      <div class="cube-top"></div>
-      <div class="cube-wrapper">
-        <span style="--i:0" class="cube-span"></span>
-        <span style="--i:1" class="cube-span"></span>
-        <span style="--i:2" class="cube-span"></span>
-        <span style="--i:3" class="cube-span"></span>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="group1">
+        <div class="location-labels">
+          <p>100</p>
+          <p>90</p>
+          <p>80</p>
+          <p>70</p>
+          <p>60</p>
+          <p>50</p>
+          <p>40</p>
+          <p>30</p>
+          <p>20</p>
+          <p>10</p>
+          <p>0</p>
+        </div>
+        <div class="range-slider">
+          <div class="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="vertical-slider"
+              id="myRange"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="group2">
+        <div class="dots">
+          <div class="ff4"></div>
+          <div class="ff3"></div>
+          <div class="bank2"></div>
+          <div class="mall2"></div>
+          <div class="ps2"></div>
+          <div class="church"></div>
+          <div class="ff2"></div>
+          <div class="bank1"></div>
+          <div class="mall1"></div>
+          <div class="ps1"></div>
+          <div class="ff1"></div>
+        </div>
+        <div class="labels">
+          <div class="ff4">Fast Food 4 (95km)</div>
+          <div class="ff3">Fast Food 3 (85km)</div>
+          <div class="bank2">Bank 2</div>
+          <!-- also 85km -->
+          <div class="mall2">Mall 2 (72km)</div>
+          <div class="ps2">Police Station 2 (57km)</div>
+          <div class="church">Church (50km)</div>
+          <div class="ff2">Fast Food 2 (46km)</div>
+          <div class="bank1">Bank 1 (35km)</div>
+          <div class="mall1">Mall 1 (24km)</div>
+          <div class="ps1">Police Station 1 (15km)</div>
+          <div class="ff1">Fast Food 1 (5km)</div>
+        </div>
+      </div>
+
+      <div class="group3">
+        <div class="value" id="sliderValue" style="color: white">0</div>
+        <div class="subgroup">
+          <div class="input-group">
+            <label class="label" for="location">Enter Location:</label>
+            <input
+              autocomplete="off"
+              name="location"
+              id="location"
+              class="input"
+              type="text"
+            />
+          </div>
+        </div>
+
+        <div class="subgroup" id="pick">
+          <p>Pick a Destination:</p>
+          <button class="loc-button" id="ps-button">Police Station</button>
+          <button class="loc-button" id="ff-button">Fast Food</button>
+          <button class="loc-button" id="mall-button">Mall</button>
+          <button class="loc-button" id="bank-button">Bank</button>
+          <button class="loc-button" id="church-button">Church</button>
+          <p>or</p>
+          <div class="subgroup">
+            <div class="input-group">
+              <label class="label" for="location">Enter Destination:</label>
+              <input
+                autocomplete="off"
+                name="location"
+                id="destination-txt"
+                class="input"
+                type="text"
+              />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="subgroup" id="find-refresh">
+          <button class="find-button" id="find-button">Find</button>
+          <button class="find-button" id="refresh-button">Refresh</button>
+        </div>
+
+        <div class="subgroup">
+          <h1 id="alloutput" style="font-size: 1.3rem;">Output</h1>
+        </div>
       </div>
     </div>
-        
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
